@@ -62,7 +62,7 @@ fun App() {
 
     val s = remember(now, tick) { Store.snapshot(ctx, now) }
 
-    val toggle = {
+    val toggle: () -> Unit = {
         val t = System.currentTimeMillis()
         if (s.running) {
             Store.logout(ctx, t)
